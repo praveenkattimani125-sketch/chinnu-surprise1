@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Surprise for You ❤️</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;min-height:100vh;font-family:Georgia,'Times New Roman',serif;color:#fff;background:radial-gradient(circle at top,#6d2347 0,#291329 48%,#100d1c 100%);display:grid;place-items:center;overflow-x:hidden}
+  .hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden}.heart{position:absolute;bottom:-40px;color:#ff9fbd;opacity:.65;animation:float 9s linear infinite;font-size:20px}
+  @keyframes float{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+  .card{width:min(92%,620px);margin:34px auto;padding:clamp(26px,6vw,52px);text-align:center;border:1px solid #ffffff35;border-radius:28px;background:#ffffff12;backdrop-filter:blur(12px);box-shadow:0 24px 80px #0007;position:relative}
+  .tiny{letter-spacing:4px;text-transform:uppercase;font:11px Arial,sans-serif;color:#ffc1d3}
+  h1{font-size:clamp(36px,8vw,60px);line-height:1.02;margin:18px 0;color:#ffe5ed;font-weight:normal}
+  .date{font:13px Arial,sans-serif;letter-spacing:2px;color:#ffb6ca;margin:20px 0 28px}
+  p{font-size:18px;line-height:1.7;color:#fff0f4}
+  button{border:0;border-radius:999px;padding:16px 26px;background:linear-gradient(120deg,#ff7ca8,#ffb4c8);color:#401329;font-weight:bold;font-size:15px;cursor:pointer;box-shadow:0 8px 25px #ff6e9a55;transition:.2s}
+  button:hover{transform:translateY(-2px) scale(1.02)}
+  #message{display:none;margin-top:28px;padding-top:22px;border-top:1px solid #ffffff35}
+  .signature{font-style:italic;color:#ffc1d3;font-size:21px;margin-top:24px}
+  .small{font:12px Arial,sans-serif;color:#e9c4d0;margin-top:24px}
+  .flower{font-size:36px;margin:12px}
+</style>
+</head>
+<body>
+<div class="hearts" id="hearts"></div>
+<main class="card">
+  <div class="tiny">A little message from my heart</div>
+  <div class="flower">🌷❤️🌷</div>
+  <h1>For my<br>favorite person</h1>
+  <div class="date">20 OCTOBER 2024 · OUR SPECIAL DAY</div>
+  <p>I know I remembered our anniversary late, and I am truly sorry. I should have made you feel celebrated on the day itself.</p>
+  <p>Before you open this, please know one thing: forgetting the date was my mistake — never a measure of how much you mean to me.</p>
+  <button id="reveal">Open your little surprise 💌</button>
+  <section id="message">
+    <h1 style="font-size:38px">Happy Anniversary, my love ❤️</h1>
+    <p>Since 20 October 2024, you've been part of so many of my favorite thoughts and moments. I can't rewind the day, but I can make today special and keep choosing you in all the days ahead.</p>
+    <p>I'm not asking you to stop being upset instantly. I just hope you'll let me make it up to you — with time, care, and a proper celebration that you deserve.</p>
+    <div class="signature">I love you. I'm sorry. And I'm still so lucky to have you. ❤️</div>
+    <div class="flower">✨💗✨</div>
+  </section>
+  <div class="small">Made with love, especially for you.</div>
+</main>
+<script>
+  document.getElementById('reveal').addEventListener('click',()=>{
+    document.getElementById('message').style.display='block';
+    document.getElementById('reveal').textContent='A thousand hugs for you ❤️';
+    document.getElementById('message').scrollIntoView({behavior:'smooth',block:'nearest'});
+  });
+  const area=document.getElementById('hearts');
+  for(let i=0;i<22;i++){const h=document.createElement('span');h.className='heart';h.textContent=['♥','♡','✦'][i%3];h.style.left=(Math.random()*100)+'%';h.style.animationDelay=(Math.random()*9)+'s';h.style.animationDuration=(7+Math.random()*7)+'s';h.style.fontSize=(14+Math.random()*20)+'px';area.appendChild(h)}
+</script>
+</body>
+</html>
